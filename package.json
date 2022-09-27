@@ -19,6 +19,7 @@
     "@shopify/react-native-skia": "0.1.141",
     "expo": "~46.0.9",
     "expo-blur": "^11.2.0",
+    "expo-linking": "~3.2.2",
     "expo-splash-screen": "^0.16.2",
     "expo-status-bar": "~1.4.0",
     "firebase": "^9.10.0",

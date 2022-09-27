@@ -8,8 +8,24 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: 'transparent',
     },
+    appContainer: {
+      flex: 1,
+    },
+    mainContainer: {
+      flex: 1,
+      paddingLeft: 60,
+      paddingRight: 60,
+      justifyContent: 'center',
+    },
     contentContainer: {
       paddingHorizontal: 30,
+    },
+    contacting: {
+      flex: 1,
+      paddingLeft: 60,
+      paddingRight: 60,
+      justifyContent: 'center',
+      flexDirection: 'row'
     },
     title: {
       fontSize: 32,
@@ -118,5 +134,21 @@ export const styles = StyleSheet.create({
       },
       shadowOpacity: 0.44,
       shadowRadius: 10.32,
+    },
+    contactBody: {
+      fontSize: 20,
+      lineHeight: 35,
+      marginBottom: 20,
+      fontWeight: '400',
+      textAlign: 'center',
+      color: '#353147',
+    },
+    email: {
+      color: 'blue',
+      fontSize: 20,
+      lineHeight: 35,
+      marginBottom: 20,
+      fontWeight: '400',
+      textAlign: 'center',
     },
   });

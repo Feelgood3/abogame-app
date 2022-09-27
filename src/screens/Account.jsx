@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  SafeAreaView,
   TouchableOpacity,
-  ScrollView,
-  TextInput,
   Text,
   View,
   Dimensions,
   Alert
 } from 'react-native';
-import BlurEffect from '../utilities/BlurEffect';
-import { styles } from './styles';
+import BlurAccount from '../utilities/BlurAccount';
+import { styles } from './stylesAccount';
 import { useNavigation } from '@react-navigation/native';
 import { getAuth, signOut } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../../firebaseconfig';
 import { useAuth } from '../context/Auth';
+import * as Linking from 'expo-linking';
 
 const AccountScreen = () => {
   const {height} = Dimensions.get('window');
@@ -36,18 +34,28 @@ const AccountScreen = () => {
 
   return (
     <>
-      <BlurEffect />
-      <SafeAreaView style={styles.container}>
-        <ScrollView contentContainerStyle={styles.container}>
-          <View style={styles.contentContainer}>
+      <BlurAccount />
+      <View style={styles.appContainer}>
+        <View style={styles.mainContainer}>
+          <View style={styles.formContainer}>
             <Text style={styles.title}>Hello!</Text>
             <Text style={styles.body}>Are you {currentUser.email}? If not, please sign out.</Text>
-            <TouchableOpacity onPress={handleLogout} style={styles.signInButton}>
-              <Text style={{color: 'white', fontWeight: 'bold'}}>Log out</Text>
+            <TouchableOpacity onPress={handleLogout} style={styles.kbButton}>
+              <Text style={{color: 'white', fontWeight: 'bold'}}>Sign out</Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
-      </SafeAreaView>
+          <View style={styles.contacting}>
+            <Text style={styles.contactBody}>
+              Do you have any feedback about our app?  
+            </Text> 
+            <TouchableOpacity onPress={() => Linking.openURL('mailto:sergiomoncadao@gmail.com.com?subject=Aboga.me feedback form&body=Hello, my name is __________ and I want to make some feedback about Aboga.me')}>
+              <Text style={styles.email}>
+              contact us
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
     </>
   );
 };

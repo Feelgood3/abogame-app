@@ -16,29 +16,26 @@ import {
   import {Dimensions} from 'react-native';
   
   const {width, height} = Dimensions.get('window');
-  const c = vec(width / 4, (height / 2));
+  const c = vec(width, (height / 2));
   const r = c.x - 32;
   
-  export default function BlurContact() {
+  export default function BlurHome() {
     const progress = useLoop({duration: 8000});
     const start = useComputedValue(
       () => sub(c, vec(0, mix(progress.current, r, r))),
       [progress],
     );
     const end = useComputedValue(
-      () => add(c, vec(0, mix(progress.current, r, r / 2))),
+      () => add(c, vec(0, mix(progress.current, r, r / 1.2))),
       [progress],
     );
     const radius = useComputedValue(
-      () => mix(progress.current, r, r / 2),
+      () => mix(progress.current, r, r / 1.2),
       [progress],
     );
     return (
       <Canvas style={{width: '100%', height: '100%', position: 'absolute'}}>
         <Fill color={'#e5e8ef'} />
-        <Circle c={c} r={radius}>
-          <LinearGradient start={start} end={end} colors={['green', 'olive']} />
-        </Circle>
         <BackdropFilter filter={<Blur blur={40} />}>
           <Fill color={'#DFE3E610'} />
         </BackdropFilter>
