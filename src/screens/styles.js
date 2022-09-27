@@ -34,6 +34,13 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       color: '#353147',
     },
+    mapTitle: {
+      fontSize: 32,
+      fontWeight: '500',
+      textAlign: 'center',
+      color: '#353147',
+      paddingTop: 30,
+    },
     kbTitle: {
       fontSize: 32,
       fontWeight: '750',

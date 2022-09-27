@@ -25,7 +25,6 @@ const AccountScreen = () => {
   const handleLogout = ({ navigation }) => {
     signOut(auth)
     .then(() => {
-        navigateTo.navigate('LoginScreen')
     }).catch(error => {
         console.log(error)
         Alert.alert(error.message)
