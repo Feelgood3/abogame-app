@@ -1,11 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { useAuth } from '../context/Auth';
 import BlurEffect from '../utilities/BlurEffect';
 import { styles } from './styles';
 
-export default function Home () {
-  const { signup, currentUser } = useAuth()
+export default function WorkLaw () {
 
   return (
     <View style={styles.container}>

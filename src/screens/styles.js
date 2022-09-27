@@ -18,6 +18,14 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       color: '#353147',
     },
+    kbTitle: {
+      fontSize: 30,
+      fontWeight: '650',
+      lineHeight: 35,
+      textAlign: 'center',
+      color: '#353147',
+      paddingBottom: 70
+    },
     body: {
       padding: 20,
       fontSize: 30,
@@ -80,6 +88,20 @@ export const styles = StyleSheet.create({
       borderRadius: 16,
       alignItems: 'center',
       marginVertical: -10,
+      shadowColor: '#FD6D6A',
+      shadowOffset: {
+        width: 0,
+        height: 8,
+      },
+      shadowOpacity: 0.44,
+      shadowRadius: 10.32,
+    },
+    kbButton: {
+      backgroundColor: 'darkcyan',
+      padding: 20,
+      borderRadius: 16,
+      alignItems: 'center',
+      marginVertical: 10,
       shadowColor: '#FD6D6A',
       shadowOffset: {
         width: 0,

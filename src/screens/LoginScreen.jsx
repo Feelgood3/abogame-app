@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
   TextInput,
-  StyleSheet,
   Text,
   View,
   Dimensions,
@@ -18,16 +17,19 @@ import { useNavigation } from '@react-navigation/native';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../../firebaseconfig';
+// import { useAuth } from '../context/Auth';
 
 const SignIn = ({navigation}) => {
   const {height} = Dimensions.get('window');
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  // const { signUp } = useAuth()
   const navigateTo = useNavigation();
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+
+  // const user = useContext(AuthContext);
 
   const handleCreateAccount = () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -69,6 +71,7 @@ const SignIn = ({navigation}) => {
               placeholder="Enter your email"
               autoCorrect={false}
               onChangeText={(text) => setEmail(text)}
+              keyboardType='email-address'
             />
             <TextInput
               style={styles.input}

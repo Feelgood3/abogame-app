@@ -4,7 +4,7 @@ import { useAuth } from '../context/Auth';
 import BlurEffect from '../utilities/BlurEffect';
 import { styles } from './styles';
 
-export default function Home () {
+export default function Maps () {
   const { signup, currentUser } = useAuth()
 
   return (

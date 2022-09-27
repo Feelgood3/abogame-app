@@ -6,22 +6,60 @@ import { NavigationContainer } from '@react-navigation/native';
 import LoginScreen from '../screens/LoginScreen';
 import Home from '../screens/Home'
 import KnowledgeBase from '../screens/KnowledgeBase';
+import AccountScreen from '../screens/Account';
+import Maps from '../screens/Maps';
+import ConstitutionalRights from '../screens/ConstitutionalRights';
+import CivilLaw from '../screens/CivilLaw';
+import CriminalLaw from '../screens/CriminalLaw';
+import WorkLaw from '../screens/WorkLaw';
+
+import { useAuth } from '../context/Auth';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const HomeStackNavigator = createNativeStackNavigator();
 
-function MyStack() {
+function LoggedInStack() {
     return (
         <HomeStackNavigator.Navigator
-            initialRouteName='HomeScreen'>
-            <HomeStackNavigator.Screen
-                name="HomeScreen"
-                component={Home}
-                />
+            initialRouteName='KnowledgeBase'>
             <HomeStackNavigator.Screen
                 name="KnowledgeBase"
-                component={Home}
+                component={KnowledgeBase}
+                options={{
+                    headerShown: false,
+                 }}
+                />
+            <HomeStackNavigator.Screen
+                name="Criminal Law"
+                component={CriminalLaw}
+                />
+            <HomeStackNavigator.Screen
+                name="Constitutional Rights"
+                component={ConstitutionalRights}
+                />
+            <HomeStackNavigator.Screen
+                name="Civil Law"
+                component={CivilLaw}
+                />
+            <HomeStackNavigator.Screen
+                name="Work Law"
+                component={WorkLaw}
+                />
+        </HomeStackNavigator.Navigator>
+    )
+}
+
+function LoggedOffStack() {
+    return (
+        <HomeStackNavigator.Navigator
+            initialRouteName='LoginScreen'>
+            <HomeStackNavigator.Screen
+                name="LoginScreen"
+                component={LoginScreen}
+                options={{
+                    headerShown: false,
+                 }}
                 />
         </HomeStackNavigator.Navigator>
     )
@@ -30,6 +68,7 @@ function MyStack() {
 const Tab = createBottomTabNavigator();
 
 function RoutingTabs() {
+    
     return (
         <Tab.Navigator 
         initialRouteName='Home'
@@ -37,7 +76,7 @@ function RoutingTabs() {
             tabBarActiveTintColor: 'green',
         }}>
             <Tab.Screen name='Home'
-             component={MyStack}
+             component={Home}
              options={{
                 tabBarLabel: 'Home',
                 tabBarIcon: ({ color, size }) => (
@@ -46,18 +85,8 @@ function RoutingTabs() {
                 headerShown: false,
              }}
               />
-            <Tab.Screen name='LoginScreen'
-             component={LoginScreen}
-             options={{
-                tabBarLabel: 'Login',
-                tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons name="account" color='black' size ={24} />
-                ),
-                headerShown: false,
-             }}
-              />
               <Tab.Screen name='KnowledgeBase'
-             component={KnowledgeBase}
+             component={LoggedInStack}
              options={{
                 tabBarLabel: 'Guide',
                 tabBarIcon: ({ color, size }) => (
@@ -66,14 +95,58 @@ function RoutingTabs() {
                 headerShown: false,
              }}
               />
+                <Tab.Screen name='Maps'
+             component={Maps}
+             options={{
+                tabBarLabel: 'Legal Clinic finder',
+                tabBarIcon: ({ color, size }) => (
+                    <MaterialCommunityIcons name="map" color='black' size ={24} />
+                ),
+                headerShown: false,
+             }}
+              />              
+                <Tab.Screen name='Account'
+             component={AccountScreen}
+             options={{
+                tabBarLabel: 'Account',
+                tabBarIcon: ({ color, size }) => (
+                    <MaterialCommunityIcons name="account" color='black' size ={24} />
+                ),
+                headerShown: false,
+             }}
+              />
+        </Tab.Navigator>
+    );
+}
+
+function LoggedOffTabs() {
+    
+    return (
+        <Tab.Navigator 
+        initialRouteName='LoginScreen'
+        screenOptions={{
+            tabBarActiveTintColor: 'green',
+        }}>
+            <Tab.Screen name='Login'
+             component={LoggedOffStack}
+             options={{
+                tabBarLabel: 'Login',
+                tabBarIcon: ({ color, size }) => (
+                    <MaterialCommunityIcons name="account" color='black' size ={24} />
+                ),
+                headerShown: false,
+                tabBarShowLabel: false,
+             }}
+              />
         </Tab.Navigator>
     );
 }
 
 export default function Navigation() {
+    const { currentUser } = useAuth()
     return (
         <NavigationContainer>
-            <RoutingTabs />
+            { currentUser? <RoutingTabs />: <LoggedOffTabs />}
         </NavigationContainer>
     );
 }
