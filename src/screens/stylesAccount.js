@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
           height: 8,
         },
         marginTop: 30,
-        marginBottom: -100,
+        marginBottom: -30,
         shadowOpacity: 0.44,
         shadowRadius: 10.32,
       },

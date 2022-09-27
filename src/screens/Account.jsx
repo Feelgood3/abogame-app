@@ -22,7 +22,7 @@ const AccountScreen = () => {
   const auth = getAuth(app);
   const { currentUser } = useAuth()
 
-  const handleLogout = ({ navigation }) => {
+  const handleLogout = () => {
     signOut(auth)
     .then(() => {
     }).catch(error => {
