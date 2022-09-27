@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   login: {
-    width: '350',
-    height: '500',
+    width: 350,
+    height: 500,
     borderColor: '#fff',
     borderWidth: 2,
     borderRadius: 10,
@@ -22,23 +22,23 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   profilePicture: {
-    width: '100',
-    height: '100',
+    width: 100,
+    height: 100,
     borderColor: '#fff',
     borderWidth: 1,
     borderRadius: 70,
     marginVertical: 30
   },
   formText: {
-    fontSize: '17',
+    fontSize: 17,
     fontWeight: '400',
     color: '#fff',
     borderWidth: 1,
     borderRadius: 70,
   },
   input: {
-    width: '250',
-    height: '40',
+    width: 250,
+    height: 40,
     borderColor: '#fff',
     borderWidth: 2,
     borderRadius: 10,
@@ -48,8 +48,8 @@ export const styles = StyleSheet.create({
     marginBottom: 20
   },
   input: {
-    width: '250',
-    height: '40',
+    width: 250,
+    height: 40,
     borderColor: '#fff',
     borderWidth: 1,
     borderRadius: 10,
