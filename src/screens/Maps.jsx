@@ -14,6 +14,8 @@ export default function Maps () {
   });
 
   const [destination, setDestination] = useState({
+    latitude: 4.629067,
+    longitude: -74.073416,
     });
 
   useEffect(() => {
