@@ -15,6 +15,9 @@ Many thanks to the Make It Real Bootcamp for their support during these long mon
 - Contact our legal team in the 'Contact Us' tab 
 - Find your closest Legal Clinic in Bogota in an interactive map
 
+![Legal clinics finder](./assets/clinic-finder.jpeg "Title")
+
+
 ## Authors
 
 - [@Feelgood3](https://www.github.com/Feelgood3)
