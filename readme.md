@@ -9,11 +9,11 @@ This application is built in React Native, and is working on Android 12 and iOS 
 Many thanks to the Make It Real Bootcamp for their support during these long months.
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
+- Register and log in via email and password, authenticated through Firebase
+- Tab navigation becomes enabled as soon as you are logged in!
+- Daily tip in the Home screen
+- Contact our legal team in the 'Contact Us' tab 
+- Find your closest Legal Clinic in Bogota in an interactive map
 
 ## Authors
 
