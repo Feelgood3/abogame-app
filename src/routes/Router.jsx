@@ -88,9 +88,9 @@ function RoutingTabs() {
               <Tab.Screen name='KnowledgeBase'
              component={LoggedInStack}
              options={{
-                tabBarLabel: 'Guide',
+                tabBarLabel: 'Contact Us',
                 tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons name="book-open-blank-variant" size={24} color="black" />
+                    <MaterialCommunityIcons name="account-tie" size={24} color="black" />
                 ),
                 headerShown: false,
              }}

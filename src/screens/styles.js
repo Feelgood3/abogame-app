@@ -19,12 +19,12 @@ export const styles = StyleSheet.create({
       color: '#353147',
     },
     kbTitle: {
-      fontSize: 30,
-      fontWeight: '650',
+      fontSize: 32,
+      fontWeight: '750',
       lineHeight: 35,
       textAlign: 'center',
       color: '#353147',
-      paddingBottom: 70
+      paddingBottom: 10
     },
     body: {
       padding: 20,
@@ -34,6 +34,15 @@ export const styles = StyleSheet.create({
       fontWeight: '400',
       textAlign: 'center',
       color: '#353147',
+    },
+    kbBody: {
+      padding: 20,
+      fontSize: 27,
+      marginBottom: 20,
+      fontWeight: '400',
+      textAlign: 'center',
+      color: '#353147',
+      paddingBottom: 40
     },
     buttonsText: {
       fontWeight: '500',
