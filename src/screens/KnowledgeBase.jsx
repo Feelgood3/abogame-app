@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import BlurContact from '../utilities/BlurContact';
 import { styles } from './styles';
 
-export default function Home () {
+export default function ContactUs () {
   const NavigateTo = useNavigation();
 
   return (

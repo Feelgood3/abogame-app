@@ -151,4 +151,8 @@ export const styles = StyleSheet.create({
       fontWeight: '400',
       textAlign: 'center',
     },
+    map: {
+      width: '90%',
+      height: '90%',
+    },
   });

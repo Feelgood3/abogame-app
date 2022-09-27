@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 // screens
 import LoginScreen from '../screens/LoginScreen';
 import Home from '../screens/Home'
-import KnowledgeBase from '../screens/KnowledgeBase';
+import ContactUs from '../screens/KnowledgeBase';
 import AccountScreen from '../screens/Account';
 import Maps from '../screens/Maps';
 import ConstitutionalRights from '../screens/ConstitutionalRights';
@@ -22,10 +22,10 @@ const HomeStackNavigator = createNativeStackNavigator();
 function LoggedInStack() {
     return (
         <HomeStackNavigator.Navigator
-            initialRouteName='KnowledgeBase'>
+            initialRouteName='ContactUs'>
             <HomeStackNavigator.Screen
-                name="KnowledgeBase"
-                component={KnowledgeBase}
+                name="ContactUs"
+                component={ContactUs}
                 options={{
                     headerShown: false,
                  }}
